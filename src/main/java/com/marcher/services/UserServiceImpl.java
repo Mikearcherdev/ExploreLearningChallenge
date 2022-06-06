@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
         if (alreadyExists != null){
             return new ResponseEntity<>(null, HttpStatus.CONFLICT);
         }
-        return new ResponseEntity<>(this.userDao.save(user), HttpStatus.OK);
+        return new ResponseEntity<>(this.userDao.save(user), HttpStatus.CREATED);
     }
 
     public void deleteUser(Integer id) {
